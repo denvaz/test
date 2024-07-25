@@ -47,13 +47,13 @@ def sidebar_logged_in():
     LOGO = "images/rbaselogo.png"
     st.logo(LOGO)
     with st.sidebar:
-        st.page_link("Rbase.py",label="Главная",icon="🔘",use_container_width=True)
-        st.page_link("pages/task_tracking.py",label=" Задачи",icon="🔘",use_container_width=True)
-        st.page_link("pages/new_sn.py",label=" Новые SN",icon="🔘",use_container_width=True)
-        st.page_link("pages/used_sn.py",label=" Использованные SN",icon="🔘",use_container_width=True)
-        st.page_link("pages/pack_tracking.py",label=" Трекинг паков",icon="🔘",use_container_width=True)
-        st.page_link("pages/method.py",label=" Методы",icon="🔘",use_container_width=True)
-        st.page_link("pages/tools.py",label=" Инструменты",icon="🔘",use_container_width=True)
+        st.page_link("Rbase.py",label="Main",icon="🔘",use_container_width=True)
+        st.page_link("pages/task_tracking.py",label=" Dashboard",icon="🔘",use_container_width=True)
+        st.page_link("pages/new_sn.py",label=" New SN",icon="🔘",use_container_width=True)
+        st.page_link("pages/used_sn.py",label=" Used SN",icon="🔘",use_container_width=True)
+        st.page_link("pages/pack_tracking.py",label=" Pack tracking",icon="🔘",use_container_width=True)
+        st.page_link("pages/method.py",label=" Methods",icon="🔘",use_container_width=True)
+        st.page_link("pages/tools.py",label=" Tools",icon="🔘",use_container_width=True)
         st.subheader("")
         st.subheader("")
         st.button('Выйти', on_click = logout)
@@ -62,4 +62,3 @@ def init_supabase():
     url = "https://ekphnccyjmmoohivjxsu.supabase.co"
     key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrcGhuY2N5am1tb29oaXZqeHN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE3MDI5MzMsImV4cCI6MjAzNzI3ODkzM30.1_kMU3S8vJlVDFkm8ro2CGvNKSy_PGeCK4FsLxXnDpU"
     return create_client(url, key)
-# def sidebar_logged_out():
