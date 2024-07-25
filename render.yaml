@@ -7,7 +7,7 @@ type: python
 python: 3.9
 
 # Команда для запуска приложения
-entrypoint: streamlit run test.py
+entrypoint: streamlit run Rbase.py
 
 # Количество экземпляров для запуска
 scale:
