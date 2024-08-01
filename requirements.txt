@@ -10,3 +10,5 @@ numpy==2.0.1
 postgrest==0.16.9
 progress==1.6
 requests==2.31.0
+python-dateutil==2.9.0.post0
+Jinja2==3.1.4
