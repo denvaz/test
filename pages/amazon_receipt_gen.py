@@ -143,7 +143,7 @@ def main():
                     shipping_price = st.text_input("Shipping price",value=st.session_state.shipping_price, placeholder="0.00")
                     try:
                         shipping_price_value = float(shipping_price)
-                        shipping_price = float(f"{shipping_price_value:,.2f}")
+                        shipping_price = float(f"{shipping_price_value:.2f}")
                     except ValueError:
                         shipping_price_value = 0.00
                         st.error("invalid value. Example: 12.50")
@@ -155,7 +155,7 @@ def main():
                     item_cost = st.text_input("Item cost", value=st.session_state.item_cost, placeholder="399.00")
                     try:
                         item_cost_value = float(item_cost)
-                        item_cost = float(f"{item_cost_value:,.2f}")
+                        item_cost = float(f"{item_cost_value:.2f}")
                     except ValueError:
                         item_cost_value = 0.00
                         st.error("invalid value. Example: 399.00")
@@ -181,7 +181,7 @@ def main():
                             tax = st.text_input("Tax %", value=st.session_state.item_cost, placeholder="7.25", label_visibility="collapsed")
                             try:
                                 tax_value = float(tax)
-                                tax = float(f"{tax_value:,.2f}")
+                                tax = float(f"{tax_value:.2f}")
                             except ValueError:
                                 tax_value = 0.00
                                 st.error("invalid value. Example: 7.25")
@@ -214,11 +214,11 @@ def main():
                                 tax = 0
 
                     if shipping_price == 0.0:
-                        shipping_price = float(f"{shipping_price:,.2f}")
+                        shipping_price = float(f"{shipping_price:.2f}")
                     if item_cost == 0.0:
-                        item_cost = float(f"{item_cost:,.2f}")
+                        item_cost = float(f"{item_cost:.2f}")
                     if tax == 0.0:
-                        tax = float(f"{tax:,.2f}")
+                        tax = float(f"{tax:.2f}")
                     
                     if item_cost is not None and tax is not None and shipping_price is not None:
                     
