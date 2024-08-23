@@ -13,3 +13,4 @@ requests==2.31.0
 python-dateutil==2.9.0.post0
 Jinja2==3.1.4
 streamlit-extras==0.4.6
+streamlit-datalist==0.0.5
