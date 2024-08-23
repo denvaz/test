@@ -1,6 +1,7 @@
 import streamlit as st
 from utils import login, sidebar_logged_in, init_supabase, SessionState
 from streamlit_extras.tags import tagger_component
+from streamlit_datalist import stDatalist
 
 supabase = init_supabase()
 
@@ -99,7 +100,7 @@ def main():
         more = fc2.toggle("Подробнее")
         new_address = fc4.popover("Добавить адрес", use_container_width=True)
         with new_address:
-            new_address_line1 = st.selectbox("Addres line 1", fetch_address_lines(supabase, user))
+            new_address_line1 = stDatalist("Addres line 1", fetch_address_lines(supabase, user))
             c1,c2 = st.columns([1,1])
             new_address_line2_prefix = c1.selectbox("Type", ["Apt", "Unit", "Suite", "Floor", "Building", "Room", "Wing", "Box", "Office", "Block", "Section", "Cell"])
             new_address_line2 = new_address_line2_prefix + " " + c2.text_input("Addres line 2", autocomplete="off")
