@@ -46,7 +46,10 @@ def display_cases(response, vendor_color_mapping, user, address1, address2, more
             tagger_component("", tags, color_name=colors)
         with c2:
             st.data_editor([row for row in response.data], column_config=case_column_config(), num_rows="fixed", hide_index=True)
-            st.button("📝Редактировать", key=user + address1 + str(address2))
+            if st.button("📝Редактировать", key=user + address1 + str(address2)):
+                st.session_state.address_line1 = address1
+                st.session_state.address_line2 = address2
+                st.switch_page("pages/dashboard.py")
     else:
         c1, c2, c3, c4 = st.columns([0.2, 0.2, 0.2, 1])
         with c1:
