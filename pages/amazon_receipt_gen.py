@@ -203,11 +203,11 @@ def main():
                     address_zip = st.text_input("ZIP code", placeholder="10001")
         # Payment method ##########
                     st.markdown("<p style='font-size:14px; margin-bottom: 4px;'>Payment method last 4 digits</p>", unsafe_allow_html=True) 
-                    ld1, ld2 = st.columns([3, 1])
+                    ld1, ld2 = st.columns([4, 2])
                     last_digits = None
-                    with ld2:
-                        if st.button("Random"):
-                            st.session_state.last_digits = generate_last_digits()
+                    # with ld2:
+                    #     if st.button("Random"):
+                    #         st.session_state.last_digits = generate_last_digits()
                     with ld1:
                         last_digits = st.text_input("Payment method last 4 digits", placeholder="1234", value=st.session_state.last_digits or "", label_visibility="collapsed")                             
                  
