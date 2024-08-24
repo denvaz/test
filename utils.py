@@ -2,7 +2,6 @@ import streamlit as st
 from st_pages import hide_pages
 from supabase import create_client, Client
 
-# Class for managing session state
 class SessionState:
     def __init__(self):
         self.logged_in = False
@@ -31,16 +30,9 @@ def login():
                         st.error('invalid login or password')
 
 def sidebar_logged_in():
-    # st.markdown("""
-    #     <style>
-    #         section[data-testid="stSidebar"][aria-expanded="true"]{
-    #             display: block;
-    #         }
-    #     </style>
-    #     """, unsafe_allow_html=True)
      
     LOGO = "images/rbaselogo.png"
-    # st.logo(LOGO)
+    st.logo(LOGO)
     with st.sidebar:
         st.page_link("Rbase.py",label="Main",icon="🔘",use_container_width=True)
         st.page_link("pages/dashboard.py",label=" Dashboard",icon="🔘",use_container_width=True)
@@ -51,9 +43,9 @@ def sidebar_logged_in():
         st.page_link("pages/used_sn.py",label=" Used SN list",icon="🔘",use_container_width=True)
         st.subheader("Receipt", divider="gray")
         st.page_link("pages/amazon_receipt_gen.py",label=" Amazon receipt",icon="🔘",use_container_width=True)
-        st.subheader("Tools", divider="gray")
-        st.page_link("pages/pack_tracking.py",label=" Pack tracking",icon="🔘",use_container_width=True)
-        st.page_link("pages/metadata_clean.py",label=" Metadata cleaner",icon="🔘",use_container_width=True)
+        # st.subheader("Tools", divider="gray")
+        # st.page_link("pages/pack_tracking.py",label=" Pack tracking",icon="🔘",use_container_width=True)
+        # st.page_link("pages/metadata_clean.py",label=" Metadata cleaner",icon="🔘",use_container_width=True)
         st.subheader("")
         st.subheader("")
         st.button('Exit', on_click = logout)
@@ -62,5 +54,3 @@ def init_supabase():
     url = "https://ekphnccyjmmoohivjxsu.supabase.co"
     key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrcGhuY2N5am1tb29oaXZqeHN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE3MDI5MzMsImV4cCI6MjAzNzI3ODkzM30.1_kMU3S8vJlVDFkm8ro2CGvNKSy_PGeCK4FsLxXnDpU"
     return create_client(url, key)
-
-
